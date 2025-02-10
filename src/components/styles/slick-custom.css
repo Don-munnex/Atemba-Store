@@ -1,0 +1,53 @@
+/* Ensure the center image gets larger */
+.slick-center img {
+    transform: scale(1.1); /* Scale the center image */
+}
+
+/* Apply a stronger, more noticeable purple glowing effect to the centered image */
+.slick-center img {
+    box-shadow: 0 0 50px 20px rgba(128, 0, 128, 1); /* Larger spread and blur for full glow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for glow */
+}
+
+/* Apply a more intense purple glow on focus */
+.slick-center img:focus {
+    outline: none;
+    box-shadow: 0 0 60px 25px rgba(128, 0, 128, 1); /* Stronger glow when focused */
+}
+
+/* Make the carousel container bigger */
+.slick-slide img {
+    object-fit: cover; /* Ensure images fill the container without black edges */
+    border-radius: 15px; /* Optional: add rounded corners for a smooth look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add extra space around the images */
+.slick-track {
+    margin-top: 20px;  /* Adjust top margin for more space */
+    margin-bottom: 20px; /* Adjust bottom margin for more space */
+}
+
+/* Make the carousel container bigger */
+.slick-slider {
+    width: 100%; /* Make the width responsive */
+    height: 350px; /* Increase the height of the carousel */
+}
+
+/* Make the entire image slider container larger */
+.w-full {
+    width: 100%;
+}
+
+.max-w-3xl {
+    max-width: 90%; /* Increase the width by setting a larger max-width value */
+}
+
+.mt- {
+    margin-top: 50px; /* Keep the top margin to keep it spaced correctly */
+}
+
+/* Adjust slide to show more space per image */
+.slick-slide {
+    padding: 0 20px;  /* Optional: Adds extra space between slides */
+}
