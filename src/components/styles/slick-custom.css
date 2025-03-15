@@ -1,3 +1,4 @@
+
 /* Ensure the center image gets larger */
 .slick-center img {
     transform: scale(1.1); /* Scale the center image */
@@ -5,14 +6,14 @@
 
 /* Apply a stronger, more noticeable purple glowing effect to the centered image */
 .slick-center img {
-    box-shadow: 0 0 50px 20px rgba(128, 0, 128, 1); /* Larger spread and blur for full glow */
+    box-shadow: 0 0 50px 20px rgb(7, 94, 207); /* Larger spread and blur for full glow */
     transition: box-shadow 0.3s ease-in-out; /* Smooth transition for glow */
 }
 
 /* Apply a more intense purple glow on focus */
 .slick-center img:focus {
     outline: none;
-    box-shadow: 0 0 60px 25px rgba(128, 0, 128, 1); /* Stronger glow when focused */
+    box-shadow: 0 0 60px 25px rgb(12, 42, 211); /* Stronger glow when focused */
 }
 
 /* Make the carousel container bigger */
@@ -51,3 +52,4 @@
 .slick-slide {
     padding: 0 20px;  /* Optional: Adds extra space between slides */
 }
+

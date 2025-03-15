@@ -11,66 +11,66 @@ import { WalletContextState } from '@solana/wallet-adapter-react';
 
 // Define the props type for the provider
 interface WalletContextProviderProps {
-    children: ReactNode;
+children: ReactNode;
 }
 
 // Create the context with the correct type
 const WalletContext = createContext<WalletContextState | null>(null);
 
 export const CustomWalletMultiButton = () => {
-    const wallet = useSolanaWallet();
- 
-    
-    // Conditionally render button text based on connection state
-    const Buttontext = wallet.connected ? null : 'Connect Wallet';
+const wallet = useSolanaWallet();
 
-    return (
-        <WalletMultiButton style={connectNavBarStyles} >
-            {Buttontext}
-        </WalletMultiButton>
-    );
+
+// Conditionally render button text based on connection state
+const Buttontext = wallet.connected ? null : 'Connect';
+
+return (
+    <WalletMultiButton style={connectNavBarStyles}>
+        {Buttontext}
+    </WalletMultiButton>
+);
 };
 
 // Button styles
 const connectNavBarStyles: React.CSSProperties = {
-    backgroundColor: 'purple', // Bootstrap 'primary' color
-    color: 'black',
-    // padding: '0.5rem 1rem',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    fontSize: '20px',
+backgroundColor: 'transparent', // Bootstrap 'primary' color
+color: 'white',
+// padding: '0.5rem 1rem',
+border: 'none',
+borderRadius: '5px',
+cursor: 'pointer',
+fontSize: '40px',
 };
 
 const WalletContextProvider: React.FC<WalletContextProviderProps> = ({ children }) => {
-    const network = WalletAdapterNetwork.Devnet;
-    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+const network = WalletAdapterNetwork.Devnet;
+const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
-    const wallets = useMemo(() => [
-        new PhantomWalletAdapter(),
-    ], [network]);
+const wallets = useMemo(() => [
+    new PhantomWalletAdapter(),
+], [network]);
 
-    const wallet = useSolanaWallet();
+const wallet = useSolanaWallet();
 
-    return (
-        <ConnectionProvider endpoint={endpoint}>
-            <WalletProvider wallets={wallets} autoConnect>
-                <WalletModalProvider>
-                    <WalletContext.Provider value={wallet}>
-                        {children}
-                    </WalletContext.Provider>
-                </WalletModalProvider>
-            </WalletProvider>
-        </ConnectionProvider>
-    );
+return (
+    <ConnectionProvider endpoint={endpoint}>
+        <WalletProvider wallets={wallets} autoConnect>
+            <WalletModalProvider>
+                <WalletContext.Provider value={wallet}>
+                    {children}
+                </WalletContext.Provider>
+            </WalletModalProvider>
+        </WalletProvider>
+    </ConnectionProvider>
+);
 };
 
 export const useWallet = () => {
-    const context = useContext(WalletContext);
-    if (context === null) {
-        throw new Error('useWallet must be used within a WalletContextProvider');
-    }
-    return context;
+const context = useContext(WalletContext);
+if (context === null) {
+    throw new Error('useWallet must be used within a WalletContextProvider');
+}
+return context;
 };
 
 export default WalletContextProvider;

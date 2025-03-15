@@ -1,0 +1,6 @@
+.slick-center img {
+    outline: none !important; /* Removes the default glow */
+    box-shadow: none !important; /* Ensures no glowing shadow */
+    border: none !important; /* Removes any border highlight */
+  }
+  
