@@ -55,6 +55,7 @@ const ProductPage: React.FC<ProductPageProps> = () => {
           <span className="bg-black px-3 py-1">← Back to all products</span>
         </Link>
         <AppTemplate
+          id={product.id}
           label={product.label}
           company={product.company}
           image={product.url}

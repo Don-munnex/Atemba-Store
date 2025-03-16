@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+// import React, {useState} from "react";
 import { FaArrowRight } from "react-icons/fa";
 import '../components/ArrowAnimation.css'; // Import the CSS file for animation
 import {apps} from "./Apps";
@@ -11,7 +11,7 @@ interface Photo {
 
 
 const TriangularImageLayout: React.FC = () => {
-  const [clicked, setClicked] = useState(false);
+  // const [clicked, setClicked] = useState(false);
   const navigate = useNavigate();
 
   const handlePhotoClick = (photo: Photo) => {
