@@ -1,33 +1,33 @@
 
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { apps, Games } from './Apps';
 
-interface AppItem {
-  id: number;
-  url: string;
-  alt: string;
-  label?: string;
-}
+// interface AppItem {
+//   id: number;
+//   url: string;
+//   alt: string;
+//   label?: string;
+// }
 
 const AnimatedMotionSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const Photo: React.FC<AppItem> = ({url, alt, label}) => {
-    return (
-      <div>
-        <img src={url} alt={alt} />
-        <p>{label}</p>
-      </div>
-    );
-  };
+  // const Photo: React.FC<AppItem> = ({url, alt, label}) => {
+  //   return (
+  //     <div>
+  //       <img src={url} alt={alt} />
+  //       <p>{label}</p>
+  //     </div>
+  //   );
+  // };
   
   // Calculate dimensions for seamless scrolling
   const totalAppsItems = apps.length;
-  const totalGamesItems = Games.length;
+  // const totalGamesItems = Games.length;
   const itemsPerRow = 4;
   const appsRows = Math.ceil(totalAppsItems / itemsPerRow);
-  const gamesRows = Math.ceil(totalGamesItems / itemsPerRow);
+  // const gamesRows = Math.ceil(totalGamesItems / itemsPerRow);
   
   // Combined height/width of all photos to ensure continuous scrolling
   const totalAppsHeight = appsRows * 120; // Assuming each row is approximately 120px tall

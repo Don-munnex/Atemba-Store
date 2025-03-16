@@ -5,6 +5,7 @@ import "../styles/Product-slick.css";
 // import 'slick-carousel/slick/slick-theme.css';
 
 interface AppDetails {
+  id: number;
   label: string; 
   image: string;
   description: string;

@@ -1,30 +1,29 @@
-
-
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { apps } from "./Apps";
 
-// Define the structure of a photo item (make sure this matches your apps structure)
-interface Photo {
+// Define the interface to match your actual apps data structure
+interface AppDetails {
   id: number;
-  url: string;
-  alt: string;
-  label?: string;
+  url: string;  // This is where your image URL is stored
+  alt: string;  // This is the alt text for the image
+  label: string;
   description: string;
-  company: string;
   systemRequirements: string[];
-  screenshots?: string[];
+  screenshots?: { url: string; alt: string }[];
   additionalInfo: string;
+  company: string;
+  link: string;
 }
 
 interface PhotoGridProps {
-  photos: Photo[];
+  photos: AppDetails[];
 }
 
-const PhotoGrid: React.FC<PhotoGridProps> = ({ photos }) => {
+const PhotoGrid: React.FC<PhotoGridProps> = ({ photos = apps }) => {
   const navigate = useNavigate();
 
-  const handlePhotoClick = (photo: Photo) => {
+  const handlePhotoClick = (photo: AppDetails) => {
     // Navigate to the product page with the photo data
     navigate(`/product/${photo.id}`, { state: photo });
   };
@@ -54,6 +53,7 @@ const PhotoGrid: React.FC<PhotoGridProps> = ({ photos }) => {
 };
 
 export default PhotoGrid;
+
 
 
 
