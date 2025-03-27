@@ -14,6 +14,7 @@ interface WalletContextProviderProps {
 children: ReactNode;
 }
 
+
 // Create the context with the correct type
 const WalletContext = createContext<WalletContextState | null>(null);
 
@@ -35,7 +36,7 @@ return (
 const connectNavBarStyles: React.CSSProperties = {
 backgroundColor: 'transparent', // Bootstrap 'primary' color
 color: 'white',
-// padding: '0.5rem 1rem',
+padding: '0.5rem 1rem',
 border: 'none',
 borderRadius: '5px',
 cursor: 'pointer',
