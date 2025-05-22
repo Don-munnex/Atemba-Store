@@ -1,5 +1,3 @@
-
-
 import "../src/components/major";
 // import DarkModeToggle from "../src/components/major";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
